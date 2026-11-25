@@ -12,14 +12,6 @@ import {
   ArrowLeft,
   CheckCircle2,
   Layers,
-  Code,
-  Palette,
-  Cpu,
-  ShieldCheck,
-  Instagram,
-  Linkedin,
-  Twitter,
-  Github
 } from "lucide-react";
 
 export default function LenonStudioLanding() {
@@ -376,7 +368,7 @@ export default function LenonStudioLanding() {
               setActiveCaseStudy(null);
               scrollToTop();
             }}
-            className="flex items-center gap-2 hover:opacity-85 transition-opacity cursor-pointer"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer"
           >
             <span className="font-michroma font-black tracking-wider text-base sm:text-lg uppercase text-neutral-950">
               LENON
@@ -485,12 +477,9 @@ export default function LenonStudioLanding() {
               </a>
               <div className="flex items-center justify-between text-xs text-neutral-500 pt-1">
                 <span>Jombang, East Java</span>
-                <a
-                  href="/login"
-                  className="font-semibold text-neutral-950 hover:underline"
-                >
-                  Studio OS →
-                </a>
+                <span className="font-semibold text-neutral-950">
+                  Studio OS
+                </span>
               </div>
             </div>
           </aside>
@@ -781,7 +770,7 @@ export default function LenonStudioLanding() {
             </div>
           </section>
 
-          {/* 3. SERVICES SECTION (DENGAN PERBAIKAN BORDER RESPONSIF DI HP) */}
+          {/* 3. SERVICES SECTION (OUR EXPERTISE) - BORDER DIPERBAIKI UNTUK HP */}
           <section
             id="services"
             className="py-24 sm:py-32 md:py-36 bg-white text-neutral-950 w-full"
@@ -802,7 +791,7 @@ export default function LenonStudioLanding() {
                 </p>
               </div>
 
-              {/* Grid Services dengan Border Responsif HP & Desktop */}
+              {/* Grid Capabilities dengan Border Aktif di HP & Desktop */}
               <div className="grid grid-cols-1 md:grid-cols-3 border border-neutral-200 animate-on-scroll delay-100">
                 <div className="p-8 sm:p-10 border-b md:border-b-0 md:border-r border-neutral-200 flex flex-col justify-between group hover:bg-neutral-50 transition-colors">
                   <div>
