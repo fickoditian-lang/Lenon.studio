@@ -283,6 +283,24 @@ export default function LenonStudioLanding() {
             sans-serif;
         }
 
+        .section-kicker {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .section-kicker::before {
+          content: "";
+          display: inline-block;
+          width: 0;
+          height: 0;
+          border-top: 4px solid transparent;
+          border-bottom: 4px solid transparent;
+          border-left: 6px solid currentColor;
+          flex: 0 0 auto;
+          opacity: 0.8;
+        }
+
         @keyframes fullSlideFromLeft {
           0% {
             opacity: 0;
@@ -435,19 +453,19 @@ export default function LenonStudioLanding() {
                       setActiveCaseStudy(null);
                       setDrawerOpen(false);
                     }}
-                    className="flex items-center justify-between py-4 px-4 font-bold text-neutral-900 hover:bg-neutral-950 hover:text-white transition-all duration-200 group"
+                    className="flex items-center justify-between py-4 px-4 font-bold text-neutral-900 hover:bg-neutral-950 hover:text-white transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group"
                   >
-                    <span className="group-hover:translate-x-1 transition-transform duration-200">
+                    <span className="transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1.5 will-change-transform">
                       {item}
                     </span>
                     <div className="w-5 h-5 relative flex items-center justify-center">
                       <ArrowUpRight
                         size={16}
-                        className="absolute text-neutral-400 transition-all duration-300 group-hover:text-white group-hover:translate-x-5 group-hover:-translate-y-5 group-hover:opacity-0"
+                        className="absolute text-neutral-400 transform-gpu transition-[transform,opacity,color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-white group-hover:translate-x-5 group-hover:-translate-y-5 group-hover:opacity-0 will-change-transform"
                       />
                       <ArrowRightIcon
                         size={16}
-                        className="absolute text-white transition-all duration-300 -translate-x-5 translate-y-5 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100"
+                        className="absolute text-white transform-gpu transition-[transform,opacity,color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] -translate-x-5 translate-y-5 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 will-change-transform"
                       />
                     </div>
                   </a>
@@ -730,7 +748,7 @@ export default function LenonStudioLanding() {
           >
             <div className="max-w-[1180px] mx-auto px-6 sm:px-10 w-full space-y-12 sm:space-y-16">
               <div className="max-w-3xl text-left space-y-5 sm:space-y-6 animate-on-scroll">
-                <p className="text-xs font-bold tracking-[0.25em] uppercase text-neutral-400 font-michroma pb-1">
+                <p className="section-kicker text-xs font-bold tracking-[0.25em] uppercase text-neutral-400 font-michroma pb-1">
                   ABOUT STUDIO
                 </p>
                 <h2 className="text-2xl sm:text-4xl md:text-[42px] font-black tracking-tight text-white font-michroma leading-[1.2]">
@@ -830,7 +848,7 @@ export default function LenonStudioLanding() {
           >
             <div className="max-w-[1180px] mx-auto px-6 sm:px-10">
               <div className="mb-12 sm:mb-16 animate-on-scroll">
-                <p className="text-xs uppercase tracking-[0.25em] text-neutral-400 font-bold mb-4 font-michroma">
+                <p className="section-kicker text-xs uppercase tracking-[0.25em] text-neutral-400 font-bold mb-4 font-michroma">
                   WHAT WE DO
                 </p>
                 <div className="flex flex-col gap-4">
@@ -905,7 +923,7 @@ export default function LenonStudioLanding() {
           >
             <div className="max-w-[1180px] mx-auto px-6 sm:px-10 w-full">
               <div className="mb-12 sm:mb-16 animate-on-scroll">
-                <p className="text-xs uppercase tracking-[0.25em] text-neutral-500 font-bold mb-4 font-michroma">
+                <p className="section-kicker text-xs uppercase tracking-[0.25em] text-neutral-500 font-bold mb-4 font-michroma">
                   SELECTED WORK
                 </p>
                 <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-neutral-950 font-michroma mb-4">
@@ -966,7 +984,7 @@ export default function LenonStudioLanding() {
           >
             <div className="max-w-[1180px] mx-auto px-6 sm:px-10">
               <div className="mb-12 sm:mb-16 animate-on-scroll">
-                <p className="text-xs uppercase tracking-[0.25em] text-neutral-400 font-bold mb-4 font-michroma">
+                <p className="section-kicker text-xs uppercase tracking-[0.25em] text-neutral-400 font-bold mb-4 font-michroma">
                   WORKFLOW
                 </p>
                 <div className="flex flex-col gap-4">
@@ -1078,7 +1096,7 @@ export default function LenonStudioLanding() {
             <div className="max-w-[1180px] mx-auto px-6 sm:px-10 w-full">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center animate-on-scroll">
                 <div className="lg:col-span-6 space-y-6">
-                  <span className="text-xs sm:text-sm font-bold tracking-[0.25em] text-neutral-500 uppercase font-michroma block">
+                  <span className="section-kicker text-xs sm:text-sm font-bold tracking-[0.25em] text-neutral-500 uppercase font-michroma block">
                     CONTACT
                   </span>
                   <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-neutral-950 font-michroma leading-none">
