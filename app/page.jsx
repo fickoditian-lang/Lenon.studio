@@ -845,7 +845,7 @@ export default function LenonStudioLanding() {
               </div>
 
               <div className="border-t border-b border-neutral-800 bg-neutral-950 animate-on-scroll delay-100">
-                <div className="grid grid-cols-1 md:grid-cols-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                   {[
                     {
                       num: "(01)",
@@ -874,9 +874,14 @@ export default function LenonStudioLanding() {
                   ].map((item, idx) => (
                     <div
                       key={idx}
-                      className={`p-6 sm:p-10 border-neutral-800 flex flex-col justify-between hover:bg-neutral-900/50 transition-all duration-300 group ${
-                        idx % 3 !== 2 ? "md:border-r" : ""
-                      } ${idx < 3 ? "border-b md:border-b" : ""}`}
+                      className={`p-6 sm:p-8 lg:p-10 border-neutral-800 flex flex-col justify-between hover:bg-neutral-900/50 transition-all duration-300 group
+                        border-b
+                        ${idx === 5 ? "border-b-0" : ""}
+                        ${idx % 2 === 0 ? "sm:border-r" : "sm:border-r-0"}
+                        ${idx < 4 ? "sm:border-b" : "sm:border-b-0"}
+                        ${idx % 3 !== 2 ? "lg:border-r" : "lg:border-r-0"}
+                        ${idx < 3 ? "lg:border-b" : "lg:border-b-0"}
+                      `}
                     >
                       <div>
                         <span className="text-xs font-bold text-neutral-500 font-michroma block mb-6">
