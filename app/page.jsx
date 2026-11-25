@@ -477,9 +477,12 @@ export default function LenonStudioLanding() {
               </a>
               <div className="flex items-center justify-between text-xs text-neutral-500 pt-1">
                 <span>Jombang, East Java</span>
-                <span className="font-semibold text-neutral-950">
-                  Studio OS
-                </span>
+                <a
+                  href="/login"
+                  className="font-semibold text-neutral-950 hover:underline"
+                >
+                  Studio OS →
+                </a>
               </div>
             </div>
           </aside>
@@ -752,380 +755,407 @@ export default function LenonStudioLanding() {
                 </div>
                 <div className="flex items-center justify-between py-4 sm:py-5 border-b border-neutral-800/85">
                   <span className="text-xs text-neutral-500 font-semibold uppercase tracking-wider font-michroma">
-                    Location
+                    Headquarters
                   </span>
                   <span className="text-xs sm:text-sm font-bold text-white font-michroma">
-                    Jombang, East Java, ID
+                    Jombang, Indonesia
                   </span>
                 </div>
                 <div className="flex items-center justify-between py-4 sm:py-5 border-b border-neutral-800/85">
                   <span className="text-xs text-neutral-500 font-semibold uppercase tracking-wider font-michroma">
-                    Focus Area
+                    Discipline
                   </span>
                   <span className="text-xs sm:text-sm font-bold text-white font-michroma">
-                    Brand Architecture &amp; Web Systems
+                    Brand &amp; Web Systems
                   </span>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* 3. SERVICES SECTION (OUR EXPERTISE) - BORDER DIPERBAIKI UNTUK HP */}
+          {/* 3. ANIMASI BERJALAN MURNI */}
+          <section className="py-8 bg-neutral-950 w-full overflow-hidden border-t border-neutral-800/60">
+            <div className="w-full border-t border-b border-neutral-200 py-5 bg-white overflow-hidden flex whitespace-nowrap select-none shadow-md">
+              <div className="animate-ticker flex items-center gap-10 sm:gap-14 text-neutral-950 font-michroma text-xs sm:text-sm tracking-[0.3em] uppercase font-bold">
+                {[
+                  "STRATEGIC DIGITAL DESIGN",
+                  "•",
+                  "MODERN WEB ENGINEERING",
+                  "•",
+                  "GLOBAL STANDARDS",
+                  "•",
+                  "LOCAL ROOTS IN JOMBANG",
+                  "•",
+                  "SEAMLESS USER EXPERIENCE",
+                  "•",
+                  "SCALABLE ARCHITECTURE",
+                  "•",
+                ].map((item, idx) => (
+                  <span
+                    key={idx}
+                    className="flex items-center gap-10 sm:gap-14 text-neutral-950"
+                  >
+                    {item}
+                  </span>
+                ))}
+                {[
+                  "STRATEGIC DIGITAL DESIGN",
+                  "•",
+                  "MODERN WEB ENGINEERING",
+                  "•",
+                  "GLOBAL STANDARDS",
+                  "•",
+                  "LOCAL ROOTS IN JOMBANG",
+                  "•",
+                  "SEAMLESS USER EXPERIENCE",
+                  "•",
+                  "SCALABLE ARCHITECTURE",
+                  "•",
+                ].map((item, idx) => (
+                  <span
+                    key={`dup-${idx}`}
+                    className="flex items-center gap-10 sm:gap-14 text-neutral-950"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* 4. CORE EXPERTISE / SERVICES */}
           <section
             id="services"
+            className="py-24 sm:py-32 md:py-36 bg-neutral-950 text-white w-full border-t border-neutral-800/60"
+          >
+            <div className="max-w-[1180px] mx-auto px-6 sm:px-10">
+              <div className="mb-12 sm:mb-16 animate-on-scroll">
+                <p className="text-xs uppercase tracking-[0.25em] text-neutral-400 font-bold mb-4 font-michroma">
+                  WHAT WE DO
+                </p>
+                <div className="flex flex-col gap-4">
+                  <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white font-michroma">
+                    CORE EXPERTISE
+                  </h2>
+                  <p className="text-sm sm:text-base text-neutral-400 max-w-xl leading-relaxed">
+                    Specialized digital services engineered to transform your
+                    brand presence, web architecture, and user conversion rates.
+                  </p>
+                </div>
+              </div>
+
+              <div className="border-t border-b border-neutral-800 bg-neutral-950 animate-on-scroll delay-100">
+                <div className="grid grid-cols-1 md:grid-cols-3">
+                  {[
+                    {
+                      num: "(01)",
+                      desc: "Comprehensive UI/UX research and intuitive wireframing for web & mobile applications.",
+                    },
+                    {
+                      num: "(02)",
+                      desc: "High-performance frontend engineering using modern frameworks and clean, scalable code.",
+                    },
+                    {
+                      num: "(03)",
+                      desc: "Scalable design systems and component libraries to unify your digital product brand.",
+                    },
+                    {
+                      num: "(04)",
+                      desc: "Strategic brand identity development, typography curation, and visual asset guidelines.",
+                    },
+                    {
+                      num: "(05)",
+                      desc: "Advanced performance optimization, SEO structuring, and lightning-fast speed delivery.",
+                    },
+                    {
+                      num: "(06)",
+                      desc: "End-to-end digital consultation, maintenance, and continuous product iteration support.",
+                    },
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className={`p-6 sm:p-10 border-neutral-800 flex flex-col justify-between hover:bg-neutral-900/50 transition-all duration-300 group ${
+                        idx % 3 !== 2 ? "md:border-r" : ""
+                      } ${idx < 3 ? "border-b md:border-b" : ""}`}
+                    >
+                      <div>
+                        <span className="text-xs font-bold text-neutral-500 font-michroma block mb-6">
+                          {item.num}
+                        </span>
+                        <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed group-hover:text-white transition-colors">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* 5. FEATURED WORKS / PORTFOLIO */}
+          <section
+            id="portfolio"
             className="py-24 sm:py-32 md:py-36 bg-white text-neutral-950 w-full"
           >
             <div className="max-w-[1180px] mx-auto px-6 sm:px-10 w-full">
-              <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 sm:mb-20 gap-6 animate-on-scroll">
-                <div>
-                  <p className="text-xs font-bold tracking-[0.25em] uppercase text-neutral-400 font-michroma mb-3">
-                    OUR EXPERTISE
-                  </p>
-                  <h2 className="text-3xl sm:text-5xl font-black tracking-tight font-michroma text-neutral-950">
-                    CAPABILITIES.
-                  </h2>
-                </div>
-                <p className="text-sm sm:text-base text-neutral-600 max-w-md leading-relaxed">
-                  Comprehensive digital engineering and brand design capabilities
-                  tailored for modern enterprises and fast-growing tech brands.
+              <div className="mb-12 sm:mb-16 animate-on-scroll">
+                <p className="text-xs uppercase tracking-[0.25em] text-neutral-500 font-bold mb-4 font-michroma">
+                  SELECTED WORK
+                </p>
+                <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-neutral-950 font-michroma mb-4">
+                  PORTFOLIO
+                </h2>
+                <p className="text-neutral-600 text-sm sm:text-base max-w-md leading-relaxed">
+                  Click any project below to inspect the completed client
+                  deliverables, design showcase, and measurable results.
                 </p>
               </div>
 
-              {/* Grid Capabilities dengan Border Aktif di HP & Desktop */}
-              <div className="grid grid-cols-1 md:grid-cols-3 border border-neutral-200 animate-on-scroll delay-100">
-                <div className="p-8 sm:p-10 border-b md:border-b-0 md:border-r border-neutral-200 flex flex-col justify-between group hover:bg-neutral-50 transition-colors">
-                  <div>
-                    <span className="font-mono text-xs text-neutral-400 block mb-8">
-                      (02)
-                    </span>
-                    <h3 className="text-xl font-bold font-michroma text-neutral-950 mb-3">
-                      Frontend Engineering
-                    </h3>
-                    <p className="text-sm text-neutral-600 leading-relaxed">
-                      High-performance frontend engineering using modern
-                      frameworks, React, Next.js, and clean, scalable code.
-                    </p>
-                  </div>
-                  <div className="pt-8 mt-8 border-t border-neutral-200 text-xs font-mono text-neutral-500">
-                    React / Next.js / Tailwind
-                  </div>
-                </div>
-
-                <div className="p-8 sm:p-10 border-b md:border-b-0 md:border-r border-neutral-200 flex flex-col justify-between group hover:bg-neutral-50 transition-colors">
-                  <div>
-                    <span className="font-mono text-xs text-neutral-400 block mb-8">
-                      (03)
-                    </span>
-                    <h3 className="text-xl font-bold font-michroma text-neutral-950 mb-3">
-                      Design Systems
-                    </h3>
-                    <p className="text-sm text-neutral-600 leading-relaxed">
-                      Scalable design systems and component libraries to unify
-                      your digital product brand across platforms.
-                    </p>
-                  </div>
-                  <div className="pt-8 mt-8 border-t border-neutral-200 text-xs font-mono text-neutral-500">
-                    UI/UX / Tokens / Figma
-                  </div>
-                </div>
-
-                <div className="p-8 sm:p-10 flex flex-col justify-between group hover:bg-neutral-50 transition-colors">
-                  <div>
-                    <span className="font-mono text-xs text-neutral-400 block mb-8">
-                      (04)
-                    </span>
-                    <h3 className="text-xl font-bold font-michroma text-neutral-950 mb-3">
-                      Brand Architecture
-                    </h3>
-                    <p className="text-sm text-neutral-600 leading-relaxed">
-                      Strategic brand identity development, typography curation,
-                      and visual asset guidelines.
-                    </p>
-                  </div>
-                  <div className="pt-8 mt-8 border-t border-neutral-200 text-xs font-mono text-neutral-500">
-                    Identity / Guidelines / Strategy
-                  </div>
-                </div>
-              </div>
-
-              {/* Grid bawah (05 & 06) */}
-              <div className="grid grid-cols-1 md:grid-cols-2 border-x border-b border-neutral-200 animate-on-scroll delay-150">
-                <div className="p-8 sm:p-10 border-b md:border-b-0 md:border-r border-neutral-200 flex flex-col justify-between group hover:bg-neutral-50 transition-colors">
-                  <div>
-                    <span className="font-mono text-xs text-neutral-400 block mb-8">
-                      (05)
-                    </span>
-                    <h3 className="text-xl font-bold font-michroma text-neutral-950 mb-3">
-                      Performance &amp; SEO
-                    </h3>
-                    <p className="text-sm text-neutral-600 leading-relaxed">
-                      Advanced performance optimization, SEO structuring, and
-                      lightning-fast speed delivery.
-                    </p>
-                  </div>
-                  <div className="pt-8 mt-8 border-t border-neutral-200 text-xs font-mono text-neutral-500">
-                    Optimization / Core Web Vitals
-                  </div>
-                </div>
-
-                <div className="p-8 sm:p-10 flex flex-col justify-between group hover:bg-neutral-50 transition-colors">
-                  <div>
-                    <span className="font-mono text-xs text-neutral-400 block mb-8">
-                      (06)
-                    </span>
-                    <h3 className="text-xl font-bold font-michroma text-neutral-950 mb-3">
-                      Consultation &amp; Support
-                    </h3>
-                    <p className="text-sm text-neutral-600 leading-relaxed">
-                      End-to-end digital consultation, maintenance, and
-                      continuous product iteration support.
-                    </p>
-                  </div>
-                  <div className="pt-8 mt-8 border-t border-neutral-200 text-xs font-mono text-neutral-500">
-                    Advisory / Maintenance / Support
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* 4. PORTFOLIO SECTION */}
-          <section
-            id="portfolio"
-            className="py-24 sm:py-32 md:py-36 bg-neutral-950 text-white w-full"
-          >
-            <div className="max-w-[1180px] mx-auto px-6 sm:px-10 w-full">
-              <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 sm:mb-20 gap-6 animate-on-scroll">
-                <div>
-                  <p className="text-xs font-bold tracking-[0.25em] uppercase text-neutral-400 font-michroma mb-3">
-                    SELECTED WORKS
-                  </p>
-                  <h2 className="text-3xl sm:text-5xl font-black tracking-tight font-michroma text-white">
-                    PORTFOLIO.
-                  </h2>
-                </div>
-                <p className="text-sm sm:text-base text-neutral-400 max-w-md leading-relaxed">
-                  A curated collection of digital systems, platforms, and brand
-                  identities engineered by Lenon Studio.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-on-scroll delay-100">
+              <div className="border-t border-neutral-200 animate-on-scroll delay-100">
                 {portfolioItems.map((project) => (
                   <div
                     key={project.id}
                     onClick={() => openCaseStudy(project)}
-                    className="border border-neutral-800 bg-neutral-900/40 p-8 sm:p-10 flex flex-col justify-between group cursor-pointer hover:border-neutral-600 transition-all duration-300 min-h-[360px]"
+                    className="p-6 sm:p-10 border-b border-neutral-200 bg-white hover:bg-neutral-950 text-neutral-950 hover:text-white transition-all duration-300 cursor-pointer group flex flex-col justify-between"
                   >
-                    <div>
-                      <div className="flex items-center justify-between mb-8">
-                        <span className="text-xs font-bold px-3 py-1 bg-white text-neutral-950 uppercase tracking-wider font-michroma">
+                    <div className="flex items-start justify-between gap-4 mb-8 sm:mb-10">
+                      <span className="text-xs font-bold font-michroma text-neutral-400 group-hover:text-neutral-400 transition-colors">
+                        {project.year}
+                      </span>
+                      <div className="flex items-center gap-3">
+                        <span className="text-[10px] sm:text-[11px] font-bold px-3 py-1.5 uppercase tracking-wider font-michroma bg-neutral-100 border border-neutral-200 text-neutral-800 group-hover:bg-neutral-800 group-hover:border-neutral-700 group-hover:text-neutral-200 transition-colors">
                           {project.category}
                         </span>
-                        <span className="font-mono text-xs text-neutral-500">
-                          0{project.id} / {project.year}
-                        </span>
+                        <div className="w-10 h-10 sm:w-11 sm:h-11 border border-neutral-300 text-neutral-950 group-hover:bg-white group-hover:text-neutral-950 group-hover:border-white flex items-center justify-center shrink-0 transition-all duration-300 relative overflow-hidden">
+                          <ArrowUpRight
+                            size={18}
+                            className="absolute transition-all duration-300 group-hover:translate-x-6 group-hover:-translate-y-6 group-hover:opacity-0"
+                          />
+                          <ArrowRightIcon
+                            size={18}
+                            className="absolute transition-all duration-300 -translate-x-6 translate-y-6 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100"
+                          />
+                        </div>
                       </div>
-                      <h3 className="text-2xl font-black font-michroma text-white group-hover:text-neutral-300 transition-colors mb-3">
+                    </div>
+
+                    <div className="transition-transform duration-300 ease-out group-hover:translate-x-2 sm:group-hover:translate-x-3">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-black font-michroma mb-2 sm:mb-3 tracking-tight text-neutral-950 group-hover:text-white transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-sm text-neutral-400 leading-relaxed">
+                      <p className="text-xs sm:text-sm md:text-base max-w-2xl leading-relaxed text-neutral-600 group-hover:text-neutral-300 transition-colors">
                         {project.desc}
                       </p>
                     </div>
-
-                    <div className="pt-8 mt-8 border-t border-neutral-800 flex items-center justify-between">
-                      <span className="text-xs font-michroma uppercase tracking-wider text-neutral-300 group-hover:underline flex items-center gap-2">
-                        <span>Explore Case Study</span>
-                        <ArrowUpRight size={15} />
-                      </span>
-                      <span className="w-10 h-10 border border-neutral-700 bg-neutral-800 flex items-center justify-center text-white group-hover:bg-white group-hover:text-neutral-950 transition-colors">
-                        <ArrowUpRight size={16} />
-                      </span>
-                    </div>
                   </div>
                 ))}
               </div>
             </div>
           </section>
 
-          {/* 5. PROCESS SECTION */}
+          {/* 6. WORKFLOW SECTION */}
           <section
             id="process"
-            className="py-24 sm:py-32 md:py-36 bg-white text-neutral-950 w-full"
+            className="py-24 sm:py-32 md:py-36 bg-neutral-950 text-white w-full border-t border-neutral-800/60"
           >
-            <div className="max-w-[1180px] mx-auto px-6 sm:px-10 w-full">
-              <div className="max-w-3xl mb-16 sm:mb-20 animate-on-scroll">
-                <p className="text-xs font-bold tracking-[0.25em] uppercase text-neutral-400 font-michroma mb-3">
-                  WORKFLOW &amp; METHOD
+            <div className="max-w-[1180px] mx-auto px-6 sm:px-10">
+              <div className="mb-12 sm:mb-16 animate-on-scroll">
+                <p className="text-xs uppercase tracking-[0.25em] text-neutral-400 font-bold mb-4 font-michroma">
+                  WORKFLOW
                 </p>
-                <h2 className="text-3xl sm:text-5xl font-black tracking-tight font-michroma text-neutral-950">
-                  OUR PROCESS.
-                </h2>
+                <div className="flex flex-col gap-4">
+                  <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white font-michroma">
+                    How We Collaborate
+                  </h2>
+                  <p className="text-sm sm:text-base text-neutral-400 max-w-xl leading-relaxed">
+                    A streamlined, transparent partnership framework designed to
+                    take your digital product from concept to market success.
+                  </p>
+                </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-4 border border-neutral-200 animate-on-scroll delay-100">
-                {[
-                  {
-                    step: "01",
-                    title: "DISCOVERY",
-                    desc: "Deep-dive sessions to understand your brand vision, core objectives, and target audience requirements.",
-                  },
-                  {
-                    step: "02",
-                    title: "STRATEGY",
-                    desc: "Architecture planning, wireframing, and establishing the exact design system guidelines.",
-                  },
-                  {
-                    step: "03",
-                    title: "ENGINEERING",
-                    desc: "Rigorous frontend development using Next.js, clean code principles, and flawless responsiveness.",
-                  },
-                  {
-                    step: "04",
-                    title: "DEPLOYMENT",
-                    desc: "Performance optimization, rigorous QA testing, and seamless go-live on Vercel infrastructure.",
-                  },
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className={`p-8 sm:p-10 bg-neutral-50 flex flex-col justify-between ${
-                      idx !== 3
-                        ? "border-b md:border-b-0 md:border-r border-neutral-200"
-                        : ""
-                    }`}
-                  >
-                    <div>
-                      <span className="font-mono text-xs text-neutral-400 block mb-6">
-                        ({item.step})
-                      </span>
-                      <h3 className="text-lg font-bold font-michroma text-neutral-950 mb-3">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-neutral-600 leading-relaxed">
-                        {item.desc}
-                      </p>
+              <div className="border-t border-b border-neutral-800 animate-on-scroll delay-100">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+                  {[
+                    {
+                      step: "01",
+                      title: "Discovery",
+                      desc: "Deep dive into your brand vision, goals, and target audience requirements.",
+                    },
+                    {
+                      step: "02",
+                      title: "Strategy",
+                      desc: "Structuring concepts, wireframes, and creative visual directions.",
+                    },
+                    {
+                      step: "03",
+                      title: "Execution",
+                      desc: "Crafting precise design systems and writing clean, scalable code.",
+                    },
+                    {
+                      step: "04",
+                      title: "Launch",
+                      desc: "Final testing, deployment handoff, and ongoing digital support.",
+                    },
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className={`p-8 sm:p-10 border-neutral-800 bg-neutral-950 hover:bg-neutral-900 transition-all duration-300 flex flex-col justify-between group ${
+                        idx !== 3 ? "lg:border-r" : ""
+                      } ${idx > 0 ? "border-t sm:border-t-0" : ""}`}
+                    >
+                      <div>
+                        <span className="text-xs font-bold text-neutral-500 font-michroma block mb-8">
+                          STEP {item.step}
+                        </span>
+                        <h3 className="text-lg font-bold text-white mb-3 font-michroma">
+                          {item.title}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </section>
 
-          {/* 6. TICKER SECTION */}
-          <div className="py-10 bg-neutral-950 text-white overflow-hidden border-y border-neutral-800">
-            <div className="animate-ticker whitespace-nowrap font-michroma text-xs sm:text-sm uppercase tracking-[0.3em] font-bold text-neutral-400">
-              <span className="mx-8">LENON STUDIO 2026</span>
-              <span className="mx-8">✦</span>
-              <span className="mx-8">DIGITAL AGENCY &amp; BRAND ARCHITECTURE</span>
-              <span className="mx-8">✦</span>
-              <span className="mx-8">JOMBANG, EAST JAVA</span>
-              <span className="mx-8">✦</span>
-              <span className="mx-8">NEXT.JS &amp; TAILWIND EXPERTS</span>
-              <span className="mx-8">✦</span>
-              <span className="mx-8">LENON STUDIO 2026</span>
-              <span className="mx-8">✦</span>
-              <span className="mx-8">DIGITAL AGENCY &amp; BRAND ARCHITECTURE</span>
-              <span className="mx-8">✦</span>
-              <span className="mx-8">JOMBANG, EAST JAVA</span>
-              <span className="mx-8">✦</span>
-              <span className="mx-8">NEXT.JS &amp; TAILWIND EXPERTS</span>
-              <span className="mx-8">✦</span>
+          {/* 7. STUDIO STATS SECTION */}
+          <section className="py-20 sm:py-28 bg-neutral-950 text-white w-full border-t border-neutral-800/80">
+            <div className="max-w-[1180px] mx-auto px-6 sm:px-10">
+              <div className="border border-neutral-800 bg-neutral-900/30 animate-on-scroll">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+                  {[
+                    {
+                      value: "2026",
+                      label: "Studio founded year",
+                    },
+                    {
+                      value: "04+",
+                      label: "Core digital systems",
+                    },
+                    {
+                      value: "06",
+                      label: "Specialized disciplines",
+                    },
+                    {
+                      value: "Global",
+                      label: "Client standard delivery",
+                    },
+                  ].map((stat, idx) => (
+                    <div
+                      key={idx}
+                      className={`p-8 sm:p-10 border-neutral-800 flex flex-col justify-between transition-colors hover:bg-neutral-900/80 ${
+                        idx !== 3 ? "lg:border-r" : ""
+                      } ${idx > 0 ? "border-t sm:border-t-0 lg:border-t-0" : ""}`}
+                    >
+                      <span className="text-3xl sm:text-4xl font-black font-michroma text-white tracking-wider mb-4 block">
+                        {stat.value}
+                      </span>
+                      <span className="text-xs text-neutral-400 font-michroma uppercase tracking-widest leading-relaxed">
+                        {stat.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
+          </section>
 
-          {/* 7. CONTACT SECTION */}
+          {/* 8. CONTACT SECTION */}
           <section
             id="contact"
-            className="py-24 sm:py-32 md:py-36 bg-white text-neutral-950 w-full"
+            className="py-28 sm:py-36 md:py-40 bg-white text-neutral-950 w-full border-t border-neutral-200"
           >
             <div className="max-w-[1180px] mx-auto px-6 sm:px-10 w-full">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-                <div className="lg:col-span-6 space-y-8 animate-on-scroll">
-                  <div>
-                    <p className="text-xs font-bold tracking-[0.25em] uppercase text-neutral-400 font-michroma mb-3">
-                      LET&apos;S COLLABORATE
-                    </p>
-                    <h2 className="text-3xl sm:text-5xl font-black tracking-tight font-michroma text-neutral-950 leading-tight">
-                      START A PROJECT WITH US.
-                    </h2>
-                  </div>
-                  <p className="text-sm sm:text-base text-neutral-600 leading-relaxed max-w-lg">
-                    Have an ambitious vision, a web platform to build, or a brand
-                    identity to overhaul? Get in touch and let&apos;s create
-                    something exceptional together.
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center animate-on-scroll">
+                <div className="lg:col-span-6 space-y-6">
+                  <span className="text-xs sm:text-sm font-bold tracking-[0.25em] text-neutral-500 uppercase font-michroma block">
+                    CONTACT
+                  </span>
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-neutral-950 font-michroma leading-none">
+                    Let&apos;s Build Together.
+                  </h2>
+                  <p className="text-neutral-600 text-base sm:text-lg leading-relaxed max-w-md">
+                    Have a project in mind? Feel free to reach out via email or
+                    other channels.
                   </p>
-
-                  <div className="space-y-4 pt-4 font-michroma text-xs">
-                    <a
-                      href="mailto:contact@lenon.studio"
-                      className="flex items-center gap-3 text-neutral-950 font-bold hover:underline"
-                    >
-                      <Mail size={16} className="text-neutral-400" />
-                      <span>contact@lenon.studio</span>
-                    </a>
-                    <div className="flex items-center gap-3 text-neutral-950 font-bold">
-                      <MapPin size={16} className="text-neutral-400" />
-                      <span>Jombang, East Java, Indonesia</span>
-                    </div>
-                  </div>
                 </div>
 
-                <div className="lg:col-span-6 bg-neutral-950 text-white p-8 sm:p-12 animate-on-scroll delay-100">
-                  <h3 className="text-sm font-bold font-michroma uppercase tracking-[0.2em] text-neutral-400 mb-8">
-                    PROJECT INQUIRY FORM
-                  </h3>
-                  <form
-                    onSubmit={(e) => {
-                      e.preventDefault();
-                      alert("Inquiry sent successfully! We will get back to you soon.");
-                    }}
-                    className="space-y-6"
-                  >
-                    <div>
-                      <label className="block text-xs font-michroma uppercase tracking-wider text-neutral-400 mb-2">
-                        Your Name
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="John Doe"
-                        className="w-full bg-neutral-900 border border-neutral-800 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-white transition-colors"
-                      />
+                <div className="lg:col-span-6 space-y-10">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10 items-center">
+                    <div className="space-y-8">
+                      <div className="flex items-start gap-4">
+                        <Mail
+                          size={22}
+                          className="text-neutral-950 mt-1 shrink-0"
+                        />
+                        <div>
+                          <span className="text-xs font-bold tracking-widest text-neutral-400 uppercase font-michroma block mb-1.5">
+                            EMAIL
+                          </span>
+                          <a
+                            href="mailto:hello@lenonstudio.com"
+                            className="text-sm sm:text-base font-bold text-neutral-950 hover:underline"
+                          >
+                            hello@lenonstudio.com
+                          </a>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-4">
+                        <Phone
+                          size={22}
+                          className="text-neutral-950 mt-1 shrink-0"
+                        />
+                        <div>
+                          <span className="text-xs font-bold tracking-widest text-neutral-400 uppercase font-michroma block mb-1.5">
+                            TELEPHONE
+                          </span>
+                          <span className="text-sm sm:text-base font-bold text-neutral-950 block">
+                            +62 812-3456-7890
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-4">
+                        <MapPin
+                          size={22}
+                          className="text-neutral-950 mt-1 shrink-0"
+                        />
+                        <div>
+                          <span className="text-xs font-bold tracking-widest text-neutral-400 uppercase font-michroma block mb-1.5">
+                            ADDRESS
+                          </span>
+                          <span className="text-sm sm:text-base font-bold text-neutral-950 block leading-relaxed">
+                            Jl. Melati Dalam No. 45, Jombang, East Java
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <label className="block text-xs font-michroma uppercase tracking-wider text-neutral-400 mb-2">
-                        Email Address
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        placeholder="john@example.com"
-                        className="w-full bg-neutral-900 border border-neutral-800 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-white transition-colors"
-                      />
+
+                    <div className="flex sm:justify-end">
+                      <a
+                        href="mailto:hello@lenonstudio.com"
+                        className="bg-neutral-950 hover:bg-neutral-800 text-white px-6 py-4 text-xs font-bold uppercase tracking-wider font-michroma transition-all duration-300 flex items-center gap-3 shadow-lg active:scale-95 group cursor-pointer relative overflow-hidden"
+                      >
+                        <span>Send Message</span>
+                        <div className="w-4 h-4 relative flex items-center justify-center">
+                          <ArrowUpRight
+                            size={15}
+                            className="absolute transition-all duration-300 group-hover:translate-x-4 group-hover:-translate-y-4 group-hover:opacity-0"
+                          />
+                          <ArrowRightIcon
+                            size={15}
+                            className="absolute transition-all duration-300 -translate-x-4 translate-y-4 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100"
+                          />
+                        </div>
+                      </a>
                     </div>
-                    <div>
-                      <label className="block text-xs font-michroma uppercase tracking-wider text-neutral-400 mb-2">
-                        Project Scope / Details
-                      </label>
-                      <textarea
-                        rows={4}
-                        required
-                        placeholder="Tell us about your brand, timeline, and goals..."
-                        className="w-full bg-neutral-900 border border-neutral-800 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-white transition-colors resize-none"
-                      ></textarea>
-                    </div>
-                    <button
-                      type="submit"
-                      className="w-full bg-white text-neutral-950 py-4 text-xs font-bold font-michroma uppercase tracking-wider hover:bg-neutral-200 transition-all active:scale-95 flex items-center justify-center gap-2 group cursor-pointer"
-                    >
-                      <span>Send Message</span>
-                      <ArrowUpRight
-                        size={16}
-                        className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-                      />
-                    </button>
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1134,49 +1164,43 @@ export default function LenonStudioLanding() {
       )}
 
       {/* FOOTER */}
-      <footer className="bg-neutral-950 text-white border-t border-neutral-800 py-16">
-        <div className="max-w-[1180px] mx-auto px-6 sm:px-10 flex flex-col md:flex-row items-center justify-between gap-8">
+      <footer className="bg-white border-t border-neutral-200 py-10 text-neutral-950 w-full">
+        <div className="max-w-[1180px] mx-auto px-6 sm:px-10 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left w-full">
           <div>
-            <span className="font-michroma font-black tracking-wider text-base uppercase text-white block mb-2">
-              LENON STUDIO
-            </span>
-            <p className="text-xs text-neutral-400 font-jakarta">
-              Digital Agency &amp; Brand Architecture • Jombang, East Java
+            <div className="inline-flex items-center">
+              <span className="font-michroma font-black tracking-wider text-sm uppercase text-neutral-950">
+                LENON
+              </span>
+            </div>
+            <p className="text-xs text-neutral-500 mt-2.5">
+              © 2026 Lenon Studio Jombang. All rights reserved.
             </p>
           </div>
 
-          <div className="flex items-center gap-6 text-xs font-michroma text-neutral-400">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition"
-            >
-              Instagram
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition"
-            >
-              GitHub
-            </a>
-          </div>
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-6 text-xs font-semibold text-neutral-600 font-michroma">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-neutral-950 transition"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-neutral-950 transition"
+              >
+                LinkedIn
+              </a>
+            </div>
 
-          <div>
             <button
               onClick={scrollToTop}
-              aria-label="Scroll to top"
-              className="w-11 h-11 border border-neutral-800 bg-neutral-900 hover:bg-white hover:text-neutral-950 transition flex items-center justify-center rounded-full group cursor-pointer"
+              aria-label="Back to top"
+              className="ml-2 w-11 h-11 border border-neutral-300 text-neutral-800 hover:bg-neutral-950 hover:text-white hover:border-neutral-950 transition-all duration-300 active:scale-95 cursor-pointer flex items-center justify-center bg-white group"
             >
               <ArrowUp
                 size={18}
@@ -1184,11 +1208,6 @@ export default function LenonStudioLanding() {
               />
             </button>
           </div>
-        </div>
-
-        <div className="max-w-[1180px] mx-auto px-6 sm:px-10 pt-10 mt-10 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 font-jakarta">
-          <p>© 2026 Lenon Studio. All rights reserved.</p>
-          <p className="mt-2 sm:mt-0">Crafted with precision &amp; Next.js</p>
         </div>
       </footer>
     </div>
