@@ -286,7 +286,8 @@ export default function LenonStudioLanding() {
         .section-kicker {
           display: inline-flex;
           align-items: center;
-          gap: 10px;
+          gap: clamp(8px, 0.9vw, 12px);
+          max-width: 100%;
         }
 
         .section-kicker::before {
@@ -294,11 +295,23 @@ export default function LenonStudioLanding() {
           display: inline-block;
           width: 0;
           height: 0;
-          border-top: 4px solid transparent;
-          border-bottom: 4px solid transparent;
-          border-left: 6px solid currentColor;
+          border-top: clamp(4px, 0.42vw, 5px) solid transparent;
+          border-bottom: clamp(4px, 0.42vw, 5px) solid transparent;
+          border-left: clamp(8px, 0.78vw, 10px) solid currentColor;
           flex: 0 0 auto;
-          opacity: 0.8;
+          opacity: 0.85;
+        }
+
+        @media (max-width: 380px) {
+          .section-kicker {
+            gap: 8px;
+          }
+
+          .section-kicker::before {
+            border-top-width: 4px;
+            border-bottom-width: 4px;
+            border-left-width: 8px;
+          }
         }
 
         @keyframes fullSlideFromLeft {
@@ -375,6 +388,26 @@ export default function LenonStudioLanding() {
           display: flex;
           width: max-content;
           animation: ticker 38s linear infinite;
+          animation-play-state: running;
+          will-change: transform;
+        }
+
+        /* Desktop: pause while the pointer is over the moving ticker. */
+        @media (hover: hover) and (pointer: fine) {
+          .animate-ticker:hover {
+            animation-play-state: paused;
+          }
+        }
+
+        /* Touch devices: pause while the user presses the ticker. */
+        .animate-ticker:active {
+          animation-play-state: paused;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .animate-ticker {
+            animation-duration: 90s;
+          }
         }
       `}</style>
 
